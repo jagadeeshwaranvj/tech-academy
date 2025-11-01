@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Enquiry Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .box{
+        margin: 50px auto;
+        width: 90%;
+    }
+    .enquired { color: green; font-weight: bold; cursor: pointer; }
+    .not-enquired { color: red; font-weight: bold; cursor: pointer; }
+    button { cursor: pointer; margin-right: 5px; }
+</style>
+<body>
+    <h1 style="text-align: center; margin-top: 50px;">Enquiry Details</h1>
+
+<table border="1" cellpadding="15" class="box" id="enquiryTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Number</th>
+      <th>Course</th>
+      <th>Status</th>
+      <th>update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>jagadeesh</td>
+      <td>jaga@example.com</td>
+      <td>9876543210</td>
+      <td>Java</td>
+      <td class="status not-enquired" onclick="toggleStatus(this)">Not Enquired</td>
+      <td>
+        <button onclick="editRow(this)">Edit</button>
+        <button onclick="deleteRow(this)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Kavya</td>
+      <td>kavya@example.com</td>
+      <td>9876501234</td>
+      <td>Python</td>
+      <td class="status enquired" onclick="toggleStatus(this)">Enquired</td>
+      <td>
+        <button onclick="editRow(this)">Edit</button>
+        <button onclick="deleteRow(this)">Delete</button>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>sanshiya</td>
+      <td>san@example.com</td>
+      <td>9876543210</td>
+      <td>Java</td>
+      <td class="status not-enquired" onclick="toggleStatus(this)">Not Enquired</td>
+      <td>
+        <button onclick="editRow(this)">Edit</button>
+        <button onclick="deleteRow(this)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>mithra</td>
+      <td>mithra@example.com</td>
+      <td>9876501234</td>
+      <td>Python</td>
+      <td class="status enquired" onclick="toggleStatus(this)">Enquired</td>
+      <td>
+        <button onclick="editRow(this)">Edit</button>
+        <button onclick="deleteRow(this)">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Arun</td>
+      <td>arun@example.com</td>
+      <td>9876543210</td>
+      <td>Java</td>
+      <td class="status not-enquired" onclick="toggleStatus(this)">Not Enquired</td>
+      <td>
+        <button onclick="editRow(this)">Edit</button>
+        <button onclick="deleteRow(this)">Delete</button>
+      </td>
+    </tr>
+   
+    </tr>
+  
+    <tr>
+      <td>Kavya</td>
+      <td>kavya@example.com</td>
+      <td>9876501234</td>
+      <td>Python</td>
+      <td class="status enquired" onclick="toggleStatus(this)">Enquired</td>
+      <td>
+        <button onclick="editRow(this)">Edit</button>
+        <button onclick="deleteRow(this)">Delete</button>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<script>
+  // Toggle status between Enquired and Not Enquired
+  function toggleStatus(cell) {
+    if (cell.classList.contains("not-enquired")) {
+      cell.textContent = "Enquired";
+      cell.classList.remove("not-enquired");
+      cell.classList.add("enquired");
+    } else {
+      cell.textContent = "Not Enquired";
+      cell.classList.remove("enquired");
+      cell.classList.add("not-enquired");
+    }
+  }
+
+  // Edit row details
+  function editRow(button) {
+    let row = button.parentNode.parentNode;
+    let cells = row.querySelectorAll("td");
+
+    if (button.textContent === "Edit") {
+      for (let i = 0; i < 4; i++) {  // first 4 columns
+        let oldValue = cells[i].textContent;
+        cells[i].innerHTML = `<input type="text" value="${oldValue}">`;
+      }
+      button.textContent = "Save";
+    } else {
+      for (let i = 0; i < 4; i++) {
+        let newValue = cells[i].querySelector("input").value;
+        cells[i].textContent = newValue;
+      }
+      button.textContent = "Edit";
+    }
+  }
+
+  // Delete row
+  function deleteRow(button) {
+    if(confirm("Are you sure you want to delete this enquiry?")) {
+      let row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    
+    }
+
+    .backvideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      
+    }
+
+  
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .nav-links{
+    position: relative;
+}
+  
+
+    .job-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight {
+      color: #3b82f6;
+    }
+
+    .btn-custom {
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .btn-outline-custom {
+      border: 1px solid #3b82f6;
+      color: #3b82f6;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: transparent;
+    }
+
+    .student-img {
+      max-width: 100px;
+      border-radius: 50%;
+    }
+
+ 
+
+
+
+
+    .rating {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #facc15;
+    }
+
+    .card-img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-img-overlay{
+        margin-left: 60%;
+        margin-top: 10%;
+        width: 500px;
+        
+    }
+    .place{
+      width: 450px;
+      margin-left: 35%;
+    }
+
+    .cardimg{
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .modal-content{
+      background-color: #c8d2e9;
+    }
+
+    /* Logo slider wrapper */
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Logo track animation */
+.logo-track {
+  display: flex;
+  width: calc(250px * 12); /* 12 cards total (6 original + 6 duplicate) */
+  animation: scrollLeft 20s linear infinite;
+}
+
+/* Company card styles */
+.company-card {
+  background: #fff;
+  padding: 15px 25px;
+  margin: 0 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+}
+.company-card img {
+  max-height: 60px;
+  width: auto;
+}
+
+/* Hover effect */
+.company-card:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Keyframes for continuous scroll */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+#about h2 {
+  font-size: 2.5rem;
+}
+
+#about h3 {
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+#about ul li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+.pdfbtn{
+    background-color: rgb(240, 242, 244);
+    color: rgb( 0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#placementCarousel .carousel-inner {
+  max-width: 500px; /* Adjust width as needed */
+  margin: 0 auto; /* Center the carousel */
+}
+
+#placementCarousel .carousel-item img {
+  padding-block: 010px;
+  padding: 20px;
+  margin-left: 120px;
+  width: 50%;
+  height: 300px; /* Fixed height */
+  object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+  
+    
+    .loading-message {
+      font-size: 24px;
+      color: #333;
+    }
+
+      .custom-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .infographic-step {
+    flex: 1;
+    padding: 15px;
+    transition: transform 0.5s ease;
+  }
+
+  .infographic-step:hover {
+    transform: translateY(-10px);
+  }
+.course-card {
+    transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+  }
+
+  .course-card:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .pdfbtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .pdfbtn:hover {
+    background-color: #0056b3;
+  }
+
+  .hover-scale {
+    transition: transform 0.5s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-elevate {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-elevate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+</style>
+<body>
+       <section>
+  <video autoplay loop muted class="backvideo" src="https://www.pexels.com/download/video/856953/"></video>
+<nav class="navbar navbar-expand-lg fixed-top shadow bg-white">
+  
+  <div class="container text-center">
+    
+    <!-- Logo Image -->
+    <!-- <a class="navbar-brand d-block" href="#">
+      <img src="Blue_Modern_Free_Academy_Logo-removebg-preview.png" alt="Tech Academy Logo" width="50" height="40">
+    </a> -->
+
+    <!-- Tech Academy Image Below Logo -->
+     <div >
+
+      <img src="https://www.svgrepo.com/show/371636/academy-cap.svg" alt="Tech Academy" class="img-fluid" style="max-height: 20px;">
+          <div style="color: black;">Tech Academy</div>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Center nav items -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="NewFile.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Course.html">Course</a></li>
+        <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Right login button -->
+      <!-- <a href="demo1admin.html" class="btn btn-outline-primary">Login</a> -->
+       <!-- <a href="demo1admin.html" class="btn btn-outline-primary" id="loginBtn">Login</a> -->
+<!-- <a href="demo1admin.html" class="btn btn-outline-primary" id="loginBtn">Login</a>
+<div id="loadingMessage" style="display:none;">Redirecting...</div> -->
+<a href="loading.html" class="btn btn-outline-primary">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+</section>
+
+
+
+
+<section id="aboutus" class=" mt-5 py-5 bg-dark">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <h2>About Us</h2>
+      <p class="lead">Empowering the next generation of developers through AI-powered full-stack learning</p>
+    </div>
+
+    <div class="row align-items-center text-secondary">
+
+      <!-- Left Column: Image Illustration -->
+      <div class="col-md-6 text-center mb-4">
+        <img src="https://st2.depositphotos.com/1007566/8753/v/950/depositphotos_87537316-stock-illustration-education-and-learning-icon.jpg"
+             alt="Education and Learning"
+             class="img-fluid rounded shadow hover-scale"
+             style="max-width: 400px;">
+      </div>
+
+      <!-- Right Column: Features List -->
+      <div class="col-md-6">
+
+        <div class="feature-block p-3 mb-3 shadow-sm rounded bg-white hover-elevate">
+          <h5> Cutting-Edge Technology</h5>
+          <p>Learn AI integration, Cloud Deployment, AR/VR Visualization, and the latest full stack frameworks in one course.</p>
+        </div>
+
+        <div class="feature-block p-3 mb-3 shadow-sm rounded bg-white hover-elevate">
+          <h5>Expert Mentorship</h5>
+          <p>Get hands-on guidance from industry experts and personalized career mentorship to help you succeed.</p>
+        </div>
+
+        <div class="feature-block p-3 mb-3 shadow-sm rounded bg-white hover-elevate">
+          <h5> Job-Ready Projects</h5>
+          <p>Build 10+ real-world projects that will showcase your skills and help you get hired faster.</p>
+        </div>
+
+        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#demoModal">Join Our Program</button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section id="footers">
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="footers bg-dark text-white p-4">
+
+      <div class="container text-center">
+        <div class="row">
+          <div class="mt-3">
+            <h1>Contact Us</h1>
+          </div>
+
+          
+          <div class="col">
+            <a href="tel:6383157300" class="text-white text-decoration-none">
+              📞 6383157300
+            </a>
+          </div>
+          <div class="col order-5">
+            <a href="https://www.google.com/maps?q=4,Outer+Ring+Rd,near+McDonald's,BTM+2nd+Stage,Kuvempu+Nagar,Bengaluru+560076" 
+               target="_blank" 
+               class="text-white text-decoration-none">
+              📍 4, Outer Ring Rd, near McDonald's, BTM 2nd Stage, Kuvempu Nagar, Stage 2, BTM Layout, Bengaluru, Karnataka 560076
+            </a>
+          </div>
+          <div class="col order-1">
+            <a href="mailto:kuttytech@gmail.com" class="text-white text-decoration-none">
+              ✉️ techacademy@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+<figure class="text-center mt-4">
+  <blockquote class="blockquote">
+    <h6>ISO 29990 | ISO 21001 Certified
+Start-Up India Certified</h6>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+   <cite title="Source Title">© 2025 TAP Academy Ed-Tech Private Limited. All rights reserved.
+
+</cite>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+</div>
+
+
+  
+</section>
+
+
+
+
+<div class="modal fade" id="demoModal" tabindex="-1" aria-labelledby="demoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="demoModalLabel">Book Your Demo Class</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4">
+          <!-- Left Column (Image) -->
+          <div class="col-md-6 text-center">
+            <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/careerCouncellor.png" class="img-fluid rounded-3 shadow-sm" alt="Demo Class">
+          </div>
+          <!-- Right Column (Form) -->
+          <div class="col-md-6">
+            <form action="home" method="post">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="Name" class="form-control" placeholder="Enter your name">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Mobile Number</label>
+                <input type="tel" name="Number" class="form-control" placeholder="Enter your mobile">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="Email" class="form-control" placeholder="Enter your email">
+              </div>
+ <button type="submit" class="btn btn-success w-100" onclick="showAlert()">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
+
+    function showAlert() {
+    alert('✅ Your demo class booking request has been successfully submitted!');
+  }
+
+</script>
+</body>
+</html>

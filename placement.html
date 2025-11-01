@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+ body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    
+    }
+
+    .backvideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      
+    }
+
+  
+
+    .navbar {
+      background: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .nav-links{
+    position: relative;
+}
+  
+
+    .job-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight {
+      color: #3b82f6;
+    }
+
+    .btn-custom {
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+    }
+
+    .btn-outline-custom {
+      border: 1px solid #3b82f6;
+      color: #3b82f6;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: transparent;
+    }
+
+    .student-img {
+      max-width: 100px;
+      border-radius: 50%;
+    }
+
+ 
+
+
+
+
+    .rating {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #facc15;
+    }
+
+    .card-img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-img-overlay{
+        margin-left: 60%;
+        margin-top: 10%;
+        width: 500px;
+        
+    }
+    .place{
+      width: 450px;
+      margin-left: 35%;
+    }
+
+    .cardimg{
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .modal-content{
+      background-color: #c8d2e9;
+    }
+
+    
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+
+.logo-track {
+  display: flex;
+  width: calc(250px * 12); 
+  animation: scrollLeft 20s linear infinite;
+}
+
+
+.company-card {
+  background: #fff;
+  padding: 15px 25px;
+  margin: 0 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+}
+.company-card img {
+  max-height: 60px;
+  width: auto;
+}
+
+
+.company-card:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+#about h2 {
+  font-size: 2.5rem;
+}
+
+#about h3 {
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+#about ul li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+.pdfbtn{
+    background-color: rgb(240, 242, 244);
+    color: rgb( 0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#placementCarousel .carousel-inner {
+  max-width: 500px; 
+  margin: 0 auto; 
+}
+
+#placementCarousel .carousel-item img {
+  padding-block: 010px;
+  padding: 20px;
+  margin-left: 120px;
+  width: 50%;
+  height: 300px; 
+  object-fit: cover;
+}
+
+  
+    
+    .loading-message {
+      font-size: 24px;
+      color: #333;
+    }
+
+      .custom-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .infographic-step {
+    flex: 1;
+    padding: 15px;
+    transition: transform 0.5s ease;
+  }
+
+  .infographic-step:hover {
+    transform: translateY(-10px);
+  }
+.course-card {
+    transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+  }
+
+  .course-card:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .pdfbtn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .pdfbtn:hover {
+    background-color: #0056b3;
+  }
+
+  .hover-scale {
+    transition: transform 0.5s ease;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-elevate {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-elevate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+</style>
+<body>
+       <section>
+  <video autoplay loop muted class="backvideo" src="https://www.pexels.com/download/video/856953/"></video>
+<nav class="navbar navbar-expand-lg fixed-top shadow bg-white">
+  
+  <div class="container text-center">
+    
+
+ <div >
+
+      <img src="https://www.svgrepo.com/show/371636/academy-cap.svg" alt="Tech Academy" class="img-fluid" style="max-height: 20px;">
+          <div style="color: black;">Tech Academy</div>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="NewFile.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Course.html">Course</a></li>
+        <li class="nav-item"><a class="nav-link" href="placement.html">Placement</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+<a href="loading.html" class="btn btn-outline-primary">Login</a>
+
+    </div>
+  </div>
+</nav>
+
+
+</section>
+
+
+<section id="placements">
+<figure class="text-center mt-4">
+  <blockquote class="mt-5 blockquote">
+    <h1>Our Students Are
+Placed In Top Companies</h1>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+   <cite title="Source Title">Join the ranks of our successful alumni working as industry leaders
+
+</cite>
+  </figcaption>
+</figure>
+<section id="placements" class="py-5 text-center bg-dark text-light">
+  <div class="container">
+    <!-- Header (No animation) -->
+    <h1 class="fw-bold">
+      Our Students Are <br> Placed In Top Companies
+    </h1>
+    <p class="text-secondary">
+      Join the ranks of our successful alumni working as industry leaders
+    </p>
+
+    <!-- Scrolling Company Logos -->
+    <div class="logo-slider mt-4">
+      <div class="logo-track">
+        <div class="company-card"><img src="data:image/png;base64,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" alt="Infosys"></div>
+        <div class="company-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR28Yb6U3AlNA5vIusLWEahuo87-kpKkkZefA&s" alt=""></div>
+        <div class="company-card"><img src="https://cdn.cookielaw.org/logos/f13f2198-97ab-4c25-a5cd-0fca8ada2e21/01967d0f-0708-70bc-950e-b361469038b1/34993003-7f26-4439-bc55-5bcb8fba3cf8/pwc_logo.png" alt="PwC"></div>
+        <div class="company-card"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Zeta_%28company%29.svg" alt="Zeta"></div>
+        <div class="company-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6Uvy-j6B7DvvGIoH2lFjKgyofVdv2vj1aQ&s" alt="Zoho"></div>
+        <div class="company-card"><img src="https://www.gesi.org/wp-content/uploads/2024/08/TATA-Consultancy-Services-Limited_logo-e1735658383137.png" alt="Detect"></div>
+
+        <!-- duplicate logos for seamless loop -->
+        <div class="company-card"><img src="data:image/png;base64,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" alt="Infosys"></div>
+        <div class="company-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR28Yb6U3AlNA5vIusLWEahuo87-kpKkkZefA&s" alt="KPMG"></div>
+        <div class="company-card"><img src="https://cdn.cookielaw.org/logos/f13f2198-97ab-4c25-a5cd-0fca8ada2e21/01967d0f-0708-70bc-950e-b361469038b1/34993003-7f26-4439-bc55-5bcb8fba3cf8/pwc_logo.png" alt="PwC"></div>
+        <div class="company-card"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Zeta_%28company%29.svg" alt="Zeta"></div>
+        <div class="company-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp6Uvy-j6B7DvvGIoH2lFjKgyofVdv2vj1aQ&s" alt="Zoho"></div>
+        <div class="company-card"><img src="https://www.gesi.org/wp-content/uploads/2024/08/TATA-Consultancy-Services-Limited_logo-e1735658383137.png" alt="Detect"></div>
+      </div>
+    </div>
+  </div>
+<section class="container py-5">
+  <h2 class="text-center mb-4">Our Placement Gallery</h2>
+  <div id="placementCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <div class="card shadow-sm">
+          <img src="https://previews.123rf.com/images/prasannapatil/prasannapatil2102/prasannapatil210203696/164555142-young-indian-college-student-with-holding-file-in-hand-india.jpg" class="card-img-top" alt="Student 1">
+          <div class="card-body text-center">
+            <h5 class="card-title">kohli</h5>
+            <p class="card-text">Software Developer at TCS</p>
+            <p class="card-text">₹32 LPA</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-item">
+        <div class="card shadow-sm">
+          <img src="https://plus.unsplash.com/premium_photo-1682091992663-2e4f4a5534ba?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWFsZSUyMHN0dWRlbnR8ZW58MHx8MHx8fDA%3D" class="card-img-top" alt="Student 2">
+          <div class="card-body text-center">
+            <h5 class="card-title">sharma</h5>
+            <p class="card-text">Full Stack Developer at Infosys</p>
+            <p class="card-text">₹18 LPA</p>
+          </div>
+        </div>
+      </div>
+      <!-- Student 3 -->
+      <div class="carousel-item">
+        <div class="card shadow-sm">
+          <img src="https://us.images.westend61.de/0001411499pw/portrait-of-smiling-male-student-in-corridor-of-university-MASF19099.jpg" class="card-img-top" alt="Student 3">
+          <div class="card-body text-center">
+            <h5 class="card-title">dhoni</h5>
+            <p class="card-text">Data Scientist at Wipro</p>
+            <p class="card-text">₹25 LPA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#placementCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#placementCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+  
+</section>
+
+</section>
+
+
+
+
+
+
+
+
+<section id="footers">
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="footers bg-dark text-white p-4">
+
+      <div class="container text-center">
+        <div class="row">
+          <div class="mt-3">
+            <h1>Contact Us</h1>
+          </div>
+
+          
+          <div class="col">
+            <a href="tel:6383157300" class="text-white text-decoration-none">
+               📞6383157300
+            </a>
+          </div>
+          <div class="col order-5">
+            <a href="https://www.google.com/maps?q=4,Outer+Ring+Rd,near+McDonald's,BTM+2nd+Stage,Kuvempu+Nagar,Bengaluru+560076" 
+               target="_blank" 
+               class="text-white text-decoration-none">
+               📍4, Outer Ring Rd, near McDonald's, BTM 2nd Stage, Kuvempu Nagar, Stage 2, BTM Layout, Bengaluru, Karnataka 560076
+            </a>
+          </div>
+          <div class="col order-1">
+            <a href="mailto:kuttytech@gmail.com" class="text-white text-decoration-none">
+              ✉️ techacademy@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+<figure class="text-center mt-4">
+  <blockquote class="blockquote">
+    <h6>ISO 29990 | ISO 21001 Certified
+Start-Up India Certified</h6>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+   <cite title="Source Title">© 2025 TAP Academy Ed-Tech Private Limited. All rights reserved.
+
+</cite>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+</div>
+
+
+  
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
+
+    function showAlert() {
+    alert('✅ Your demo class booking request has been successfully submitted!');
+  }
+
+</script>
+</body>
+</html>
