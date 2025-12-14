@@ -22,8 +22,6 @@ Secure admin login
 
 View all registered students
 
-View staff details
-
 Manage enquiries
 
 Enquired students
